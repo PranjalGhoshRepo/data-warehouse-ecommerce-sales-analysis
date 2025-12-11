@@ -1,5 +1,3 @@
--- Staging Tables (mirroring raw CSVs)
-
 CREATE TABLE stg_customers (
     customer_id VARCHAR(255),
     customer_unique_id VARCHAR(255),
@@ -45,8 +43,6 @@ CREATE TABLE stg_product_category_translation (
     product_category_name VARCHAR(255),
     product_category_name_english VARCHAR(255)
 );
-
--- Dimension Tables
 
 CREATE TABLE DimCustomer (
     customer_pk INT IDENTITY(1,1) PRIMARY KEY,
@@ -101,3 +97,4 @@ CREATE TABLE FactSales (
     FOREIGN KEY (order_id) REFERENCES DimOrder(order_id),
     FOREIGN KEY (seller_id) REFERENCES DimSeller(seller_id)
 );
+
